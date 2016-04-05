@@ -1,29 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site wwwwwwww</title>
-    <link>http://chungwei.github.io/</link>
-    <description>Recent content on My New Hugo Site wwwwwwww</description>
+    <title>My New Hugo Site</title>
+    <link>http://replace-this-with-your-hugo-site.com/</link>
+    <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Apr 2016 00:15:51 +0800</lastBuildDate>
-    <atom:link href="http://chungwei.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>first</title>
-      <link>http://chungwei.github.io/posts/first/</link>
-      <pubDate>Tue, 05 Apr 2016 00:15:51 +0800</pubDate>
-      
-      <guid>http://chungwei.github.io/posts/first/</guid>
-      <description></description>
-    </item>
+    <lastBuildDate>Tue, 05 Apr 2016 11:52:03 +0800</lastBuildDate>
+    <atom:link href="http://replace-this-with-your-hugo-site.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>about</title>
-      <link>http://chungwei.github.io/about/</link>
-      <pubDate>Tue, 05 Apr 2016 00:14:02 +0800</pubDate>
+      <link>http://replace-this-with-your-hugo-site.com/about/</link>
+      <pubDate>Tue, 05 Apr 2016 11:52:03 +0800</pubDate>
       
-      <guid>http://chungwei.github.io/about/</guid>
+      <guid>http://replace-this-with-your-hugo-site.com/about/</guid>
       <description></description>
     </item>
     
