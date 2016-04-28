@@ -45,7 +45,7 @@ cd blog.hugo/
 
 &lt;li&gt;&lt;p&gt;本地仓库和远程仓库关联&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;git init
+&lt;pre&gt;&lt;code&gt;git init
 git remote add origin https://github.com/your-name/blog.hugo.git
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
@@ -127,6 +127,8 @@ git push origin master
       <description>&lt;p&gt;每天往来于 上地 和 回龙观 之间的猿&amp;hellip;&lt;/p&gt;
 
 &lt;p&gt;平时填各种坑，主要使用 &lt;code&gt;PHP&lt;/code&gt; 和 &lt;code&gt;Golang&lt;/code&gt;，也填过 &lt;code&gt;JS/CSS/HTML&lt;/code&gt; 的坑。。。&lt;/p&gt;
+
+&lt;p&gt;做过&lt;code&gt;在线教育&lt;/code&gt;，做&lt;code&gt;电商&lt;/code&gt;给亚非拉倒卖过商品，现在做 &lt;code&gt;O2O&lt;/code&gt;&lt;/p&gt;
 </description>
     </item>
     

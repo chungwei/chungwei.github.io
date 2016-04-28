@@ -45,7 +45,7 @@ cd blog.hugo/
 
 &lt;li&gt;&lt;p&gt;本地仓库和远程仓库关联&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;git init
+&lt;pre&gt;&lt;code&gt;git init
 git remote add origin https://github.com/your-name/blog.hugo.git
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
