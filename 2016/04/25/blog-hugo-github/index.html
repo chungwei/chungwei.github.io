@@ -24,7 +24,7 @@
     
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/default.min.css">
     
-    <link rel="stylesheet" href="http://chungwei.github.io/css/style.css">
+    <link rel="stylesheet" href="http://chungwei.github.iocss/style.css">
     <link href="" rel="alternate" type="application/rss+xml" title="" />
 
     
@@ -41,16 +41,16 @@
 				<span class="icon-bar"></span>
 			</button>
 			
-				<a class="navbar-brand" href="http://chungwei.github.io/">酒肉穿肠过</a>
+				<a class="navbar-brand" href="http://chungwei.github.io">酒肉穿肠过</a>
 			
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				
 				
-					<li><a href="http://chungwei.github.io/about">关于我</a></li>
+					<li><a href="http://chungwei.github.ioabout">关于我</a></li>
 				
-					<li><a href="http://chungwei.github.io/">主页</a></li>
+					<li><a href="http://chungwei.github.io">主页</a></li>
 				
 			</ul>
 		</div>
@@ -61,15 +61,15 @@
 		<div id="menu" class="hidden-xs col-sm-4 col-md-3">
 	<div id="menu-content" class="vertical-align">
 		
-			<h1 class="text-center"><a href="http://chungwei.github.io/">酒肉穿肠过</a></h1>
+			<h2 class="text-center"><a href="http://chungwei.github.io">酒肉穿肠过</a></h2>
 		
 		
 		
-			<small class="text-center center-block">　</small>
+			<small class="text-center center-block">PHPer，Gopher</small>
 		
 		
 		
-			<img id="profile-pic" src="http://chungwei.github.io//img/profile.png" alt="My Picture" class="img-circle center-block">
+			<img id="profile-pic" src="http://chungwei.github.io/img/profile.png" alt="My Picture" class="img-circle center-block">
 		
 		<div id="social" class="text-center">
 			
@@ -80,9 +80,9 @@
 		<div id="links" class="text-center">
 			
 			
-				<a href="http://chungwei.github.io/about">关于我</a>
+				<a href="http://chungwei.github.ioabout">关于我</a>
 			
-				<a href="http://chungwei.github.io/">主页</a>
+				<a href="http://chungwei.github.io">主页</a>
 			
 		</div>
 	</div>
@@ -105,11 +105,11 @@
             <small class="text-muted">
                 
                 
-                    <a href="http://chungwei.github.io/tags/github">
+                    <a href="http://chungwei.github.iotags/github">
                         <span class="label label-success">github</span>
                     </a>
                 
-                    <a href="http://chungwei.github.io/tags/hugo">
+                    <a href="http://chungwei.github.iotags/hugo">
                         <span class="label label-success">hugo</span>
                     </a>
                 
@@ -118,16 +118,21 @@
 
 		
 
-<p><br>
-本文主要介绍如何使用<code>Hugo</code>在<code>Github</code>搭建免费的个人博客，关于<code>Hugo</code>
+<p><br></p>
+
+<p>本文主要介绍如何使用<code>Hugo</code>在<code>Github</code>搭建免费的个人博客，关于<code>Hugo</code>
 可在其<a href="https://gohugo.io">官网</a>上进一步了解。</p>
 
-<h4 id="环境介绍:f891efab5b1bfc4f5ede16e75d3ca708">环境介绍：</h4>
+<h4 id="环境介绍:f891efab5b1bfc4f5ede16e75d3ca708">环境介绍</h4>
 
-<p>Mac OSX 10.11.1<br />
-项目根路径 ~/www/</p>
+<ul>
+<li>Mac OSX 10.11.1<br /></li>
+<li>项目根路径 ~/www/</li>
+</ul>
 
-<h4 id="步骤如下:f891efab5b1bfc4f5ede16e75d3ca708">步骤如下：</h4>
+<hr />
+
+<h4 id="搭建步骤:f891efab5b1bfc4f5ede16e75d3ca708">搭建步骤</h4>
 
 <ol>
 <li><p>在<code>Github</code>创建两个仓库，比如<code>blog.hugo</code>和<code>chungwei.github.io</code></p></li>
@@ -166,12 +171,8 @@ git remote add origin https://github.com/your-name/blog.hugo.git
 </code></pre></li>
 
 <li><p>浏览器访问 <a href="http://localhost:1313/">http://localhost:1313/</a><br />
-<em><small>看到如下图页面，说明本地搭建博客已经没问题了。接下来就是如何挂到 <code>Github</code>上。</small></em>
-<div class="row">
-<div class="col-sm-12 col-md-12 col-lg-12">
-    <img src="/img/demo.png" style="width:100%">
-</div>
-</div></p></li>
+看到如下图页面，说明本地搭建博客已经没问题了。接下来就是如何挂到 <code>Github</code>上。
+<img src="/img/demo.png" style="width:100%"></p></li>
 
 <li><p>提交<code>blog.hugo</code> 到远程仓库</p>
 
@@ -181,7 +182,7 @@ git push origin master
 </code></pre></li>
 
 <li><p>生成站点页面<br />
-<em><small>执行完命令，目录下会多一个 <code>public</code> 目录，要发布到 <code>Github</code> 的博客页面就在该目录中</small></em></p>
+执行完命令，目录下会多一个 <code>public</code> 目录，要发布到 <code>Github</code> 的博客页面就在该目录中</p>
 
 <pre><code class="language-shell">rm -rf public
 hugo --buildDrafts -t beg
@@ -207,14 +208,55 @@ git push origin master
 </code></pre></li>
 
 <li><p>浏览器访问 <a href="http://chungwei.github.io/">http://chungwei.github.io/</a><br />
-<em><small>看到 <code>步骤8</code>页面，说明博客搭建成功。</small></em></p>
+看到 <code>步骤8</code>页面，说明博客搭建成功。</p>
 
 <blockquote>
-<p><small>可能存在这样的情况：<br />
+<p><em><small>可能存在这样的情况：<br />
 访问 <code>http://chungwei.github.io 出现404</code>，但访问 <code>http://chungwei.github.io/about</code>
 是正常的，原因是仓库<code>chungwei.github.io缺少README.md</code>，创建该文件即可解决
-</small></p>
+</small></em></p>
 </blockquote></li>
+</ol>
+
+<hr />
+
+<h4 id="安装插件:f891efab5b1bfc4f5ede16e75d3ca708">安装插件</h4>
+
+<ol>
+<li><p><strong>评论功能</strong><br />
+国外的有 <a href="https://disqus.com/">disqus</a>，国内的有 <a href="http://duoshuo.com/">多说</a>，
+因为多说支持国内第三方账号登录，下面简单说一下如何配置：</p>
+
+<ul>
+<li>注册多说账号，按照引导一步步往下走即可；</li>
+<li>完成后，提示将一段 js 代码引入页面；</li>
+<li>将 js 代码放在 <code>layout/partials/duoshuo.html</code> 中；</li>
+<li>在 <code>config.toml</code> 的 <code>[params]</code> 节点下加入配置项 <code>duoshuoShortname = &quot;your-blog-name&quot;</code>，
+注意：<code>your-blog-name</code> 是在注册多说账号时填的名称；</li>
+
+<li><p>在页面中引用 <code>layout/partials/duoshuo.html</code></p>
+
+<pre><code class="language-shell">{{ if .Site.Params.duoshuoShortname }}
+{{ partial &quot;duoshuo.html&quot; . }}
+{{ end }}
+</code></pre></li>
+</ul></li>
+
+<li><p><strong>代码高亮</strong><br />
+在文件头部设置变量 <code>highlight = true</code> 即可。</p>
+
+<blockquote>
+<p><em><small>之前尝试在 <code>config.toml</code> 文件中设置，都不生效</small></em></p>
+</blockquote></li>
+</ol>
+
+<hr />
+
+<h4 id="参考资料:f891efab5b1bfc4f5ede16e75d3ca708">参考资料</h4>
+
+<ol>
+<li><a href="https://gohugo.io/overview/quickstart/">Hugo官网文档</a></li>
+<li><a href="http://tonybai.com/2015/09/23/intro-of-gohugo/">使用Hugo搭建静态站点</a></li>
 </ol>
 
 	</article>
@@ -223,6 +265,8 @@ git push origin master
 <div id="bottom-nav" class="text-center center-block">
 	
 </div>
+
+
 
 
 
@@ -264,7 +308,7 @@ git push origin master
   
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
   
-  <script src="http://chungwei.github.io//js/App.js"></script>
+  <script src="http://chungwei.github.io/js/App.js"></script>
   
 </body>
 </html>
