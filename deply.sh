@@ -1,1 +1,1 @@
-cd ~/www/blog.hugo && rm -rf public && hugo --buildDrafts -t geo && cp -R ~/www/blog.hugo/public/* ~/www/chungwei.github.io/
+cd ~/www/blog.hugo && rm -rf public && hugo --buildDrafts -t geo && cd ~/www/chungwei.github.io/ && cp -R ~/www/blog.hugo/public/* .
