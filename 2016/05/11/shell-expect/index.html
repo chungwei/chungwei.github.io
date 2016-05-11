@@ -4,21 +4,21 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="description" content="">
-    <meta property="og:title" content="Pexpect 实现 Linux 远程登录执行命令">
+    <meta property="og:title" content="Expect 实现 Linux 远程登录">
     
     <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2016-05-09">
+    <meta property="article:published_time" content="2016-05-11">
     
     <meta property="og:description" content="">
-    <meta property="og:url" content="http://chungwei.github.io/2016/05/09/python-pexpect/">
+    <meta property="og:url" content="http://chungwei.github.io/2016/05/11/shell-expect/">
     <meta property="og:site_name" content="">
     
-    <meta property="og:tags" content="python">
+    <meta property="og:tags" content="shell">
     
-    <meta property="og:tags" content="pexpect">
+    <meta property="og:tags" content="expect">
     
     <meta name="generator" content="Hugo 0.15" />
-    <title>Pexpect 实现 Linux 远程登录执行命令 &middot; </title>
+    <title>Expect 实现 Linux 远程登录 &middot; </title>
     
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
     
@@ -96,7 +96,7 @@
         <br>
         
 		<h1 style="margin-top: 4px;">
-            Pexpect 实现 Linux 远程登录执行命令
+            Expect 实现 Linux 远程登录
         </h1>
 	</header>
 
@@ -105,12 +105,12 @@
             <small class="text-muted">
                 
                 
-                    <a href="http://chungwei.github.io/tags/python">
-                        <span class="label label-success">python</span>
+                    <a href="http://chungwei.github.io/tags/shell">
+                        <span class="label label-success">shell</span>
                     </a>
                 
-                    <a href="http://chungwei.github.io/tags/pexpect">
-                        <span class="label label-success">pexpect</span>
+                    <a href="http://chungwei.github.io/tags/expect">
+                        <span class="label label-success">expect</span>
                     </a>
                 
             </small>
@@ -118,65 +118,58 @@
 
 		
 
-<h4 id="需求:20f0c714d858a84276d2ee469ac66aca">需求</h4>
+<h4 id="背景:594a8c577dddc6215feb74a35737f6bb">背景</h4>
 
-<p>最近接到一个小需求：检测目前在线的机器是否重装过系统。</p>
+<p>远程登录时工作中经常遇到的问题，之前的解决办法要么是老老实实手工输入密码，要么是两台机器建立
+信任关系，但总感觉很麻烦，特别是机器多了，实在影响效率！</p>
 
-<blockquote>
-<p><small>由于涉及敏感信息，具体细节不描述，只记录大概思路和代码示例</small></p>
-</blockquote>
-
-<hr />
-
-<h4 id="解决思路:20f0c714d858a84276d2ee469ac66aca">解决思路</h4>
-
-<ul>
-<li>连接、登录远程机器</li>
-<li>在远程机器执行命令</li>
-<li>获取执行结果</li>
-<li>处理执行结果</li>
-</ul>
+<p>最好的办法，是不需配置信任关系即可实现自动远程登录。</p>
 
 <hr />
 
-<h4 id="代码示例:20f0c714d858a84276d2ee469ac66aca">代码示例</h4>
+<h4 id="实现:594a8c577dddc6215feb74a35737f6bb">实现</h4>
 
-<p>由于对 Shell 不太熟悉，采用了 Python Pexpect 实现，代码示例如下：</p>
+<p>使用 expect 即可实现，具体实现如下</p>
 
-<pre><code class="language-python">import pexpect
+<pre><code>#!/usr/bin/expect
 
-def ssh_cmd(ip, passwd, cmd):
-    ret = -1
-    try:
-        ssh = pexpect.spawn('ssh root@%s &quot;%s&quot;' % (ip, cmd))
-        ssh.expect('password: ')
-        ssh.sendline(passwd)
-        r = ssh.read()
-        print ssh.before
-        ret = 0
-    except Exception as ex:
-        print 'ip=',ip,',ex=',ex
-        ret = -1
-    except pexpect.TIMEOUT:
-        print 'ip=',ip,',TIMEOUT'
-        ret = -2
-    
-    ssh.close() 
-    return ret
+# 设置超时时间为 3 秒
+set timeout 3
 
-cmds='ps -U root -u root -N | wc -l'
-pwd='hhjjkkk'
-try:
-    f = open(&quot;./ip_list.txt&quot;)
-    for line in f:
-        ip = line.strip('\n')
-        ret = ssh_cmd(ip, pwd, cmds)
-        # proc ret
-    f.close()
-except Exception as ex:
-    print ex
-    f.close()
+# 设置要登录的主机 IP 地址
+set host 10.10.38.232
+
+# 设置以什么名字的用户登录
+set name root
+# 设置用户名的登录密码
+set password 111222333
+
+#spawn 一个 ssh 登录进程
+spawn  ssh $host -l $name
+
+# 等待响应，第一次登录往往会提示是否永久保存 RSA 到本机的 know hosts 列表中；等到回答后，在提示输出密码；之后就直接提示输入密码
+expect {
+   &quot;(yes/no)?&quot; {
+       send &quot;yes\n&quot;
+       expect &quot;password:&quot;
+       send &quot;$pasword\n&quot;
+   }
+   &quot;password:&quot; {
+       send &quot;$password\n&quot;
+   }
+}
+
+# 这里使用了 interact 命令，使执行完程序后，用户可以在 $host 终端进行交互操作。
+interact
 </code></pre>
+
+<hr />
+
+<h4 id="参考文献:594a8c577dddc6215feb74a35737f6bb">参考文献</h4>
+
+<ol>
+<li><a href="https://www.ibm.com/developerworks/cn/aix/library/0909_jinjh_unixlogin/">Unix/Linux 系统自动化管理: 远程登录篇</a></li>
+</ol>
 
 	</article>
 </main>
@@ -191,7 +184,7 @@ except Exception as ex:
 
 
   
-<div class="ds-thread" data-thread-key="" data-title="Pexpect 实现 Linux 远程登录执行命令" data-url="http://chungwei.github.io/2016/05/09/python-pexpect/"></div>
+<div class="ds-thread" data-thread-key="" data-title="Expect 实现 Linux 远程登录" data-url="http://chungwei.github.io/2016/05/11/shell-expect/"></div>
 
 
 
