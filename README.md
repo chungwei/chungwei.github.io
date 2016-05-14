@@ -1,3 +1,2 @@
-### 个人博客
-
-[chungwei.github.io](http://chungwei.github.io)
+# 个人技术博客
+http://chungwei.github.io/
