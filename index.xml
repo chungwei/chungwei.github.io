@@ -23,6 +23,8 @@
 感觉学习&lt;code&gt;Git&lt;/code&gt;的曲线很陡，很多命令总是很容易搞混或忘记，后来换工作又切回&lt;code&gt;SVN&lt;/code&gt;了。直到最近加到新的Team，完全使用&lt;code&gt;Git&lt;/code&gt;，
 经过不断请教和学习，该把成果整理归纳一下，以备今后查询。&lt;/p&gt;
 
+&lt;hr /&gt;
+
 &lt;h4 id=&#34;查看仓库状态:5f6a41538a10ee69232608c8f0309ef1&#34;&gt;查看仓库状态&lt;/h4&gt;
 
 &lt;p&gt;使用场景：提交之前，先看一下本次 修改、删除、新增 了哪些文件&lt;/p&gt;
@@ -37,11 +39,20 @@
 
 &lt;h4 id=&#34;提交文件:5f6a41538a10ee69232608c8f0309ef1&#34;&gt;提交文件&lt;/h4&gt;
 
-&lt;p&gt;使用场景：提交仓库的变更&lt;/p&gt;
+&lt;p&gt;使用场景：提交仓库的变更，新增和修改文件命令相同&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;git add /path/to/file1 [/path/to/file2...]  # 提交到本地暂存区，可同时提交多个文件，新增和修改文件命令相同
+&lt;pre&gt;&lt;code&gt;git add /path/to/file1 [/path/to/file2...]  # 提交到本地暂存区，可同时提交多个文件
 git commit -m &#39;提交文件&#39;  # 保存暂存区的变更到当前分支
 git push origin branch-name  # 把变更文件推到当前分支对应的远程仓库
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;提交所有文件，可以使用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git add -A
+git commit -m &#39;提交所有文件&#39;
+
+# 或
+git commit -am &#39;简写:提交所有文件&#39;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h4 id=&#34;删除文件:5f6a41538a10ee69232608c8f0309ef1&#34;&gt;删除文件&lt;/h4&gt;

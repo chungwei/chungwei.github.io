@@ -118,6 +118,8 @@
 感觉学习<code>Git</code>的曲线很陡，很多命令总是很容易搞混或忘记，后来换工作又切回<code>SVN</code>了。直到最近加到新的Team，完全使用<code>Git</code>，
 经过不断请教和学习，该把成果整理归纳一下，以备今后查询。</p>
 
+<hr />
+
 <h4 id="查看仓库状态:5f6a41538a10ee69232608c8f0309ef1">查看仓库状态</h4>
 
 <p>使用场景：提交之前，先看一下本次 修改、删除、新增 了哪些文件</p>
@@ -132,11 +134,20 @@
 
 <h4 id="提交文件:5f6a41538a10ee69232608c8f0309ef1">提交文件</h4>
 
-<p>使用场景：提交仓库的变更</p>
+<p>使用场景：提交仓库的变更，新增和修改文件命令相同</p>
 
-<pre><code>git add /path/to/file1 [/path/to/file2...]  # 提交到本地暂存区，可同时提交多个文件，新增和修改文件命令相同
+<pre><code>git add /path/to/file1 [/path/to/file2...]  # 提交到本地暂存区，可同时提交多个文件
 git commit -m '提交文件'  # 保存暂存区的变更到当前分支
 git push origin branch-name  # 把变更文件推到当前分支对应的远程仓库
+</code></pre>
+
+<p>提交所有文件，可以使用</p>
+
+<pre><code>git add -A
+git commit -m '提交所有文件'
+
+# 或
+git commit -am '简写:提交所有文件'
 </code></pre>
 
 <h4 id="删除文件:5f6a41538a10ee69232608c8f0309ef1">删除文件</h4>
