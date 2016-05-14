@@ -6,8 +6,52 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Wed, 11 May 2016 10:49:46 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 14 May 2016 09:10:58 +0800</lastBuildDate>
     <atom:link href="http://chungwei.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Git 笔记1 —文件管理篇</title>
+      <link>http://chungwei.github.io/2016/05/14/git-file/</link>
+      <pubDate>Sat, 14 May 2016 09:10:58 +0800</pubDate>
+      
+      <guid>http://chungwei.github.io/2016/05/14/git-file/</guid>
+      <description>
+
+&lt;p&gt;关于&lt;code&gt;Git&lt;/code&gt;的介绍实在太多，Google 或 百度一下 就有，不再介绍。&lt;/p&gt;
+
+&lt;p&gt;个人接触 &lt;code&gt;Git&lt;/code&gt; 已经差不多三年，第一次使用&lt;code&gt;Git&lt;/code&gt;作为版本管理工具时，网上查查资料也能使用，但习惯了&lt;code&gt;SVN&lt;/code&gt;的客户端，
+感觉学习&lt;code&gt;Git&lt;/code&gt;的曲线很陡，很多命令总是很容易搞混或忘记，后来换工作又切回&lt;code&gt;SVN&lt;/code&gt;了。直到最近加到新的Team，完全使用&lt;code&gt;Git&lt;/code&gt;，
+经过不断请教和学习，该把成果整理归纳一下，以备今后查询。&lt;/p&gt;
+
+&lt;h4 id=&#34;查看仓库状态:5f6a41538a10ee69232608c8f0309ef1&#34;&gt;查看仓库状态&lt;/h4&gt;
+
+&lt;p&gt;使用场景：提交之前，先看一下本次 修改、删除、新增 了哪些文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git status
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;查看变更前后的差异:5f6a41538a10ee69232608c8f0309ef1&#34;&gt;查看变更前后的差异&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;git diff [/path/to/file]  # 可指定只看某文件，删除和新增文件不会显示
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;提交文件:5f6a41538a10ee69232608c8f0309ef1&#34;&gt;提交文件&lt;/h4&gt;
+
+&lt;p&gt;使用场景：提交仓库的变更&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git add /path/to/file1 [/path/to/file2...]  # 提交到本地暂存区，可同时提交多个文件，新增和修改文件命令相同
+git commit -m &#39;提交文件&#39;  # 保存暂存区的变更到当前分支
+git push origin branch-name  # 把变更文件推到当前分支对应的远程仓库
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;删除文件:5f6a41538a10ee69232608c8f0309ef1&#34;&gt;删除文件&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;git rm /path/to/file
+git commit -m &#39;删除文件&#39;
+git push origin branch-name
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Expect 实现 Linux 远程登录</title>
