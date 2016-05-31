@@ -126,8 +126,31 @@ Golang Web 开发的入门书籍，前部分讲解 Golang 基本知识，后部�
 
 &lt;h4 id=&#34;列表:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;列表&lt;/h4&gt;
 
-&lt;ul&gt;
+&lt;p&gt;&lt;strong&gt;有序列表&lt;/strong&gt;&lt;br /&gt;
+&lt;code&gt;.&lt;/code&gt;后建议有一个空格&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1. 有序列表
+1. 有序列表
+1. 有序列表
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
 &lt;li&gt;有序列表&lt;/li&gt;
+&lt;li&gt;有序列表&lt;/li&gt;
+&lt;li&gt;有序列表&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;无序列表&lt;/strong&gt;&lt;br /&gt;
+&lt;code&gt;-&lt;/code&gt;前后各有一个空格&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; - 无序列表
+ - 无序列表
+ - 无序列表
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;无序列表&lt;/li&gt;
+&lt;li&gt;无序列表&lt;/li&gt;
 &lt;li&gt;无序列表&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -167,6 +190,13 @@ Golang Web 开发的入门书籍，前部分讲解 Golang 基本知识，后部�
 &lt;hr /&gt;
 
 &lt;h4 id=&#34;图片:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;图片&lt;/h4&gt;
+
+&lt;p&gt;比如 &lt;code&gt;![Alt信息](/img/pkg.jpg)&lt;/code&gt; 会显示以下图片&lt;br /&gt;
+&lt;img src=&#34;http://chungwei.github.io/img/pkg.jpg&#34; alt=&#34;Alt信息&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;small&gt;若要控制图片大小和位置，建议使用 &lt;code&gt;img 标签&lt;/code&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;hr /&gt;
 

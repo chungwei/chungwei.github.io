@@ -254,21 +254,21 @@ git stash pop # 恢复保存的现场并删除现场快照
 
 &lt;pre&gt;&lt;code&gt;git clone git@github.com:your-name/test_proj.git # 克隆项目
 cd test_proj/
-git remote add upstream git@github.com:my-org/test_proj.git # 很关键，设置个人分支的原仓库
+git remote add upstream git@github.com:my-org/test_proj.git # 很关键，设置个人分支的源仓库
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;在本地开发，期间的新增、修改、删除源文件以及提交等操作（参考&lt;code&gt;基本操作命令&lt;/code&gt;即可），
-都不会对原仓库有影响。&lt;/p&gt;&lt;/li&gt;
+都不会对源仓库有影响。&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;开发完成并通过测试之后，代码需合入原仓库，提个 &lt;code&gt;Pull Request&lt;/code&gt;（简称&lt;code&gt;PR&lt;/code&gt;），就可以等待项目的
+&lt;li&gt;&lt;p&gt;开发完成并通过测试之后，代码需合入源仓库，提个 &lt;code&gt;Pull Request&lt;/code&gt;（简称&lt;code&gt;PR&lt;/code&gt;），就可以等待项目的
 owner 进行代码审查和合并了。&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;实际开发过程中，很可能是多人协作，每个人都&lt;code&gt;fork&lt;/code&gt;自己的分支，提&lt;code&gt;PR&lt;/code&gt;也有先后顺序，也许我们提&lt;code&gt;PR&lt;/code&gt;
-时，原仓库的代码已经经过了几次迭代，那么发生冲突的可能性就非常大。&lt;br /&gt;
-为了尽可能避免代码冲突，&lt;code&gt;设置个人分支的原仓库&lt;/code&gt; 这个步骤就显得非常关键了，我们要在设置好原仓库之后，
-在开发过程中，经常同步原仓库的代码，使用如下命令即可&lt;/p&gt;
+时，源仓库的代码已经经过了几次迭代，那么发生冲突的可能性就非常大。&lt;br /&gt;
+为了尽可能避免代码冲突，&lt;code&gt;设置个人分支的源仓库&lt;/code&gt; 这个步骤就显得非常关键了，我们要在设置好源仓库之后，
+在开发过程中，经常同步源仓库的代码，使用如下命令即可&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;git fetch upstream # 同步master的最新代码到本地
+&lt;pre&gt;&lt;code&gt;git pull upstream master # 同步master的最新代码到本地
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -543,8 +543,31 @@ Golang Web 开发的入门书籍，前部分讲解 Golang 基本知识，后部�
 
 &lt;h4 id=&#34;列表:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;列表&lt;/h4&gt;
 
-&lt;ul&gt;
+&lt;p&gt;&lt;strong&gt;有序列表&lt;/strong&gt;&lt;br /&gt;
+&lt;code&gt;.&lt;/code&gt;后建议有一个空格&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1. 有序列表
+1. 有序列表
+1. 有序列表
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
 &lt;li&gt;有序列表&lt;/li&gt;
+&lt;li&gt;有序列表&lt;/li&gt;
+&lt;li&gt;有序列表&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;无序列表&lt;/strong&gt;&lt;br /&gt;
+&lt;code&gt;-&lt;/code&gt;前后各有一个空格&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; - 无序列表
+ - 无序列表
+ - 无序列表
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;无序列表&lt;/li&gt;
+&lt;li&gt;无序列表&lt;/li&gt;
 &lt;li&gt;无序列表&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -584,6 +607,13 @@ Golang Web 开发的入门书籍，前部分讲解 Golang 基本知识，后部�
 &lt;hr /&gt;
 
 &lt;h4 id=&#34;图片:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;图片&lt;/h4&gt;
+
+&lt;p&gt;比如 &lt;code&gt;![Alt信息](/img/pkg.jpg)&lt;/code&gt; 会显示以下图片&lt;br /&gt;
+&lt;img src=&#34;http://chungwei.github.io/img/pkg.jpg&#34; alt=&#34;Alt信息&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;small&gt;若要控制图片大小和位置，建议使用 &lt;code&gt;img 标签&lt;/code&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;hr /&gt;
 
