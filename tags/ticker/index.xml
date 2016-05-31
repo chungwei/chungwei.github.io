@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ticker on </title>
+    <link>http://chungwei.github.io/tags/ticker/</link>
+    <description>Recent content in Ticker on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 31 May 2016 15:32:34 +0800</lastBuildDate>
+    <atom:link href="http://chungwei.github.io/tags/ticker/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Golang 实现定时器</title>
+      <link>http://chungwei.github.io/2016/05/31/time-ticker/</link>
+      <pubDate>Tue, 31 May 2016 15:32:34 +0800</pubDate>
+      
+      <guid>http://chungwei.github.io/2016/05/31/time-ticker/</guid>
+      <description>
+
+&lt;h4 id=&#34;背景:77fc8fb2b53b076ae41e512db55d0a71&#34;&gt;背景&lt;/h4&gt;
+
+&lt;p&gt;定时任务的实现方式有多种，常用的是使用 &lt;code&gt;crontab&lt;/code&gt;。最近的一个项目需要有执行定时（每5分钟）任务的需求，要求
+不能使用 &lt;code&gt;crontab&lt;/code&gt;，于是在程序中使用 &lt;code&gt;golang&lt;/code&gt; 实现了。&lt;/p&gt;
+
+&lt;h4 id=&#34;crontab-实现:77fc8fb2b53b076ae41e512db55d0a71&#34;&gt;crontab 实现&lt;/h4&gt;
+
+&lt;p&gt;假设使用 &lt;code&gt;crontab&lt;/code&gt;，会是这样的：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;*/5 * * * * sh /path/to/script.sh 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;small&gt;配置释义：分 时 日 月 周 命令&lt;/small&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;golang-实现:77fc8fb2b53b076ae41e512db55d0a71&#34;&gt;golang 实现&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;time&amp;quot;
+)
+func main() {
+    ticker := time.NewTicker(time.Second * time.Duration(300))
+
+    for curTime := range ticker.C {
+        fmt.Println(curTime)
+        // doSth.
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
