@@ -29,10 +29,6 @@
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;*/5 * * * * sh /path/to/script.sh 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;&lt;small&gt;配置释义：分 时 日 月 周 命令&lt;/small&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
 &lt;h4 id=&#34;golang-实现:77fc8fb2b53b076ae41e512db55d0a71&#34;&gt;golang 实现&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;import (
@@ -232,18 +228,23 @@ git branch --no-merged # 查看未合并的分支
 当发生冲突时，打开冲突文件编辑，再参考 &lt;code&gt;步骤5&lt;/code&gt; 提交即可&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;撤销修改&lt;/strong&gt;&lt;br /&gt;
-在提交到暂存区之前，需撤销某个文件的修改，则使用&lt;/p&gt;
+在提交到暂存区之前（即&lt;code&gt;未 git add&lt;/code&gt;），需撤销某个文件的修改，则使用&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;git checkout -- filename
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;如已经提交到暂存区，但未commit，则使用&lt;/p&gt;
+&lt;p&gt;如已经提交到暂存区，但 &lt;code&gt;未git commit&lt;/code&gt;，则使用&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;git reset HEAD filename
 git checkout -- filename
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;还有一种情况，就是恢复已删除的文件&lt;/p&gt;
+&lt;p&gt;如 &lt;code&gt;已 git commit&lt;/code&gt;，则使用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git revert HEAD
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;还有一种情况，就是 &lt;code&gt;恢复已删除的文件&lt;/code&gt;，则使用&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;rm filename # 发现误删了
 git checkout -- filename # 即可恢复
@@ -664,6 +665,43 @@ Golang Web 开发的入门书籍，前部分讲解 Golang 基本知识，后部�
 &lt;hr /&gt;
 
 &lt;h4 id=&#34;表格:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;表格&lt;/h4&gt;
+
+&lt;p&gt;如下语法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;列1  | 列2   | 列3
+-----|-------|----
+行1  | 行1   | 行1
+行2  | 行2   | 行3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;展示效果如下：&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;列1&lt;/th&gt;
+&lt;th&gt;列2&lt;/th&gt;
+&lt;th&gt;列3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;行1&lt;/td&gt;
+&lt;td&gt;行1&lt;/td&gt;
+&lt;td&gt;行1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;行2&lt;/td&gt;
+&lt;td&gt;行2&lt;/td&gt;
+&lt;td&gt;行2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;第2行代码 &lt;code&gt;-----|------|----&lt;/code&gt; 写成 &lt;code&gt;-----:|------|----&lt;/code&gt; 说明第1列 &lt;code&gt;居右&lt;/code&gt; ；&lt;br /&gt;
+第2行代码 &lt;code&gt;-----|------|----&lt;/code&gt; 写成 &lt;code&gt;-----|:------|----&lt;/code&gt; 说明第2列 &lt;code&gt;居左&lt;/code&gt; ；&lt;/p&gt;
 
 &lt;hr /&gt;
 

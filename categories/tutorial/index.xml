@@ -206,6 +206,43 @@ Golang Web 开发的入门书籍，前部分讲解 Golang 基本知识，后部�
 
 &lt;h4 id=&#34;表格:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;表格&lt;/h4&gt;
 
+&lt;p&gt;如下语法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;列1  | 列2   | 列3
+-----|-------|----
+行1  | 行1   | 行1
+行2  | 行2   | 行3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;展示效果如下：&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;列1&lt;/th&gt;
+&lt;th&gt;列2&lt;/th&gt;
+&lt;th&gt;列3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;行1&lt;/td&gt;
+&lt;td&gt;行1&lt;/td&gt;
+&lt;td&gt;行1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;行2&lt;/td&gt;
+&lt;td&gt;行2&lt;/td&gt;
+&lt;td&gt;行2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;第2行代码 &lt;code&gt;-----|------|----&lt;/code&gt; 写成 &lt;code&gt;-----:|------|----&lt;/code&gt; 说明第1列 &lt;code&gt;居右&lt;/code&gt; ；&lt;br /&gt;
+第2行代码 &lt;code&gt;-----|------|----&lt;/code&gt; 写成 &lt;code&gt;-----|:------|----&lt;/code&gt; 说明第2列 &lt;code&gt;居左&lt;/code&gt; ；&lt;/p&gt;
+
 &lt;hr /&gt;
 
 &lt;h4 id=&#34;uml:d59f7b4dfecd890f0583fb0bac5a436e&#34;&gt;UML&lt;/h4&gt;

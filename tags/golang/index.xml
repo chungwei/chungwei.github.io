@@ -29,10 +29,6 @@
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;*/5 * * * * sh /path/to/script.sh 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;&lt;small&gt;配置释义：分 时 日 月 周 命令&lt;/small&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
 &lt;h4 id=&#34;golang-实现:77fc8fb2b53b076ae41e512db55d0a71&#34;&gt;golang 实现&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;import (

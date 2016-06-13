@@ -190,18 +190,23 @@ git branch --no-merged # 查看未合并的分支
 当发生冲突时，打开冲突文件编辑，再参考 &lt;code&gt;步骤5&lt;/code&gt; 提交即可&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;撤销修改&lt;/strong&gt;&lt;br /&gt;
-在提交到暂存区之前，需撤销某个文件的修改，则使用&lt;/p&gt;
+在提交到暂存区之前（即&lt;code&gt;未 git add&lt;/code&gt;），需撤销某个文件的修改，则使用&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;git checkout -- filename
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;如已经提交到暂存区，但未commit，则使用&lt;/p&gt;
+&lt;p&gt;如已经提交到暂存区，但 &lt;code&gt;未git commit&lt;/code&gt;，则使用&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;git reset HEAD filename
 git checkout -- filename
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;还有一种情况，就是恢复已删除的文件&lt;/p&gt;
+&lt;p&gt;如 &lt;code&gt;已 git commit&lt;/code&gt;，则使用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git revert HEAD
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;还有一种情况，就是 &lt;code&gt;恢复已删除的文件&lt;/code&gt;，则使用&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;rm filename # 发现误删了
 git checkout -- filename # 即可恢复
