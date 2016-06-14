@@ -4,21 +4,26 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="description" content="">
-    <meta property="og:title" content="Posts">
+    <meta property="og:title" content="Python 升级">
     
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2016-06-14">
     
     <meta property="og:description" content="">
-    <meta property="og:url" content="http://chungwei.github.io/post/">
+    <meta property="og:url" content="http://chungwei.github.io/2016/06/14/python-upgrade/">
     <meta property="og:site_name" content="">
     
+    <meta property="og:tags" content="python">
+    
     <meta name="generator" content="Hugo 0.15" />
-    <title>Posts &middot; </title>
+    <title>Python 升级 &middot; </title>
     
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
     
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/default.min.css">
+    
     <link rel="stylesheet" href="http://chungwei.github.io/css/style.css">
-    <link href="http://chungwei.github.io/post/index.xml" rel="alternate" type="application/rss+xml" title="" />
+    <link href="" rel="alternate" type="application/rss+xml" title="" />
 
     
     
@@ -84,34 +89,108 @@
 			<div class="row">
 				<div id="post" class="col-sm-offset-1 col-sm-11 col-md-11 col-lg-10">
 
-<article>
+<main>
 	<header>
-		<h1>Posts</a></h1>
+        <br>
+        
+		<h1 style="margin-top: 4px;">
+            Python 升级
+        </h1>
 	</header>
-<ul>
+
+	<article>
+        
+            <small class="text-muted">
+                
+                
+                    <a href="http://chungwei.github.io/tags/python">
+                        <span class="label label-success">python</span>
+                    </a>
+                
+            </small>
+        
+
+		
+
+<h4 id="系统基本信息:0744c71dad353a9a2084294ca39a142b">系统基本信息</h4>
+
+<pre><code>cat /proc/version
+</code></pre>
+
+<p><img src="/img/linuxver.png" style="width:100%"></p>
+
+<pre><code>cat /etc/issue
+</code></pre>
+
+<p><img src="/img/linuxiss.png" style="width:100%"></p>
+
+<h4 id="备份:0744c71dad353a9a2084294ca39a142b">备份</h4>
+
+<p>安装之前备份旧版本（python2.6.6），因为 <code>yum</code> 还会用到该版本</p>
+
+<pre><code>which python
+mv /usr/bin/python /usr/bin/python2.6.6
+</code></pre>
+
+<h4 id="安装:0744c71dad353a9a2084294ca39a142b">安装</h4>
+
+<pre><code>wget https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tgz
+tar -zxvf Python-2.7.11.tgz
+cd Python-2.7.11
+./configure
+make
+make install
+</code></pre>
+
+<h4 id="创建新版本软链:0744c71dad353a9a2084294ca39a142b">创建新版本软链</h4>
+
+<pre><code>which python2.7
+ln -s /usr/local/bin/python2.7 /usr/bin/python
+</code></pre>
+
+<h4 id="更改-yum-配置:0744c71dad353a9a2084294ca39a142b">更改 yum 配置</h4>
+
+<p>这时候假如使用 <code>yum</code>，便会报错，因为是 <code>python</code> 的版本问题，应进行如下修改</p>
+
+<pre><code>vim /usr/bin/yum
+// 修改第一行
+#!/usr/bin/python
+// 为
+#!/usr/bin/python2.6.6
+</code></pre>
+
+	</article>
+</main>
+
+<div id="bottom-nav" class="text-center center-block">
 	
-	<li><a href="http://chungwei.github.io/2016/06/14/python-upgrade/">Python 升级</a></li>
-	
-	<li><a href="http://chungwei.github.io/2016/06/01/leetcode-sql-join/">leetcode-MySQL 联合查询</a></li>
-	
-	<li><a href="http://chungwei.github.io/2016/05/31/time-ticker/">Golang 实现定时器</a></li>
-	
-	<li><a href="http://chungwei.github.io/2016/05/29/leetcode-reverse-string/">leetcode-字符串反转</a></li>
-	
-	<li><a href="http://chungwei.github.io/2016/05/14/git/">Git 使用笔记</a></li>
-	
-	<li><a href="http://chungwei.github.io/2016/05/11/shell-expect/">Expect 实现 Linux 远程登录</a></li>
-	
-	<li><a href="http://chungwei.github.io/2016/05/09/python-pexpect/">Pexpect 实现 Linux 远程登录执行命令</a></li>
-	
-	<li><a href="http://chungwei.github.io/2016/05/03/books/">我的书架</a></li>
-	
-	<li><a href="http://chungwei.github.io/2016/05/01/markdown/">Markdown 使用笔记</a></li>
-	
-	<li><a href="http://chungwei.github.io/2016/04/25/blog-hugo-github/">使用 Hugo Github 搭建博客</a></li>
-	
-</ul>
-</article>
+</div>
+
+
+
+
+
+
+  
+<div class="ds-thread" data-thread-key="" data-title="Python 升级" data-url="http://chungwei.github.io/2016/06/14/python-upgrade/"></div>
+
+
+
+<script type="text/javascript">
+    var duoshuoQuery = {short_name:"chungwei"};
+
+    (function() {
+     var ds = document.createElement('script');
+     ds.type = 'text/javascript';ds.async = true;
+     ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+     ds.charset = 'UTF-8';
+     (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+     })();
+</script>
+
+
+
 
 						</div>
 					</div>
@@ -126,6 +205,8 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
   
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
   
   <script src="http://chungwei.github.io//js/App.js"></script>
   

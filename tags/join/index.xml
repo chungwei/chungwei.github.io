@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Join on </title>
+    <link>http://chungwei.github.io/tags/join/</link>
+    <description>Recent content in Join on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 01 Jun 2016 12:57:07 +0800</lastBuildDate>
+    <atom:link href="http://chungwei.github.io/tags/join/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>leetcode-MySQL 联合查询</title>
+      <link>http://chungwei.github.io/2016/06/01/leetcode-sql-join/</link>
+      <pubDate>Wed, 01 Jun 2016 12:57:07 +0800</pubDate>
+      
+      <guid>http://chungwei.github.io/2016/06/01/leetcode-sql-join/</guid>
+      <description>
+
+&lt;h4 id=&#34;背景:849ebe49cd2f531ffffc3b7a189cea06&#34;&gt;背景&lt;/h4&gt;
+
+&lt;p&gt;详情可查看 &lt;a href=&#34;https://leetcode.com/problems/combine-two-tables/&#34;&gt;https://leetcode.com/problems/combine-two-tables/&lt;/a&gt;&lt;br /&gt;
+这道题的考察点就是多表联合查询，&lt;code&gt;MySQL&lt;/code&gt; 实现多表联合查询使用&lt;code&gt;inner join&lt;/code&gt;，&lt;code&gt;left join&lt;/code&gt;和&lt;code&gt;right join&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h4 id=&#34;实现:849ebe49cd2f531ffffc3b7a189cea06&#34;&gt;实现&lt;/h4&gt;
+
+&lt;p&gt;这道题比较简单，&lt;code&gt;查询Person表中每个人的地址信息，无地址显示该用户的地址为空&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;SELECT Person.FirstName,Person.LastName,Address.City,Address.State FROM Person LEFT JOIN Address ON Address.PersonId=Person.PersonId;
+/*等价于*/
+SELECT Person.FirstName,Person.LastName,Address.City,Address.State FROM Address RIGHT JOIN Person ON Address.PersonId=Person.PersonId;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;扩展思路:849ebe49cd2f531ffffc3b7a189cea06&#34;&gt;扩展思路&lt;/h4&gt;
+
+&lt;p&gt;假设 &lt;code&gt;查询Address表中每个地址对应的人的信息，该地址无相关人员则显示地址对应的用户为空&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;SELECT Person.FirstName,Person.LastName,Address.City,Address.State FROM Address LEFT JOIN Person ON Address.PersonId=Person.PersonId;
+/*等价于*/
+SELECT Person.FirstName,Person.LastName,Address.City,Address.State FROM Person RIGHT JOIN Address ON Address.PersonId=Person.PersonId;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;假设 &lt;code&gt;查询Person表中每个人的地址信息，无地址不显示该用户&lt;/code&gt;，使用 &lt;code&gt;inner join&lt;/code&gt; 即可实现&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;SELECT Person.FirstName,Person.LastName,Address.City,Address.State FROM Person INNER JOIN Address ON Address.PersonId=Person.PersonId;
+/*等价于*/
+SELECT Person.FirstName,Person.LastName,Address.City,Address.State FROM Person,Address WHERE Address.PersonId=Person.PersonId;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -29,6 +29,10 @@
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;*/5 * * * * sh /path/to/script.sh 
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;small&gt;配置释义：分 时 日 月 周 命令&lt;/small&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;h4 id=&#34;golang-实现:77fc8fb2b53b076ae41e512db55d0a71&#34;&gt;golang 实现&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;import (
@@ -44,6 +48,27 @@ func main() {
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>leetcode-字符串反转</title>
+      <link>http://chungwei.github.io/2016/05/29/leetcode-reverse-string/</link>
+      <pubDate>Sun, 29 May 2016 13:09:58 +0800</pubDate>
+      
+      <guid>http://chungwei.github.io/2016/05/29/leetcode-reverse-string/</guid>
+      <description>
+
+&lt;h4 id=&#34;描述:62351cebf8b06fcaba07c7607147ac85&#34;&gt;描述&lt;/h4&gt;
+
+&lt;p&gt;原题参看 &lt;a href=&#34;https://leetcode.com/problems/reverse-string/&#34;&gt;https://leetcode.com/problems/reverse-string/&lt;/a&gt;&lt;br /&gt;
+例如：&lt;br /&gt;
+输入 “hello”，返回“olleh”&lt;/p&gt;
+
+&lt;h4 id=&#34;算法实现:62351cebf8b06fcaba07c7607147ac85&#34;&gt;算法实现&lt;/h4&gt;
+
+&lt;p&gt;使用 &lt;code&gt;Golang&lt;/code&gt; 实现&lt;br /&gt;
+```&lt;/p&gt;
 </description>
     </item>
     

@@ -6,8 +6,65 @@
     <description>Recent content in Python on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Mon, 09 May 2016 11:03:27 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jun 2016 22:05:52 +0800</lastBuildDate>
     <atom:link href="http://chungwei.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Python 升级</title>
+      <link>http://chungwei.github.io/2016/06/14/python-upgrade/</link>
+      <pubDate>Tue, 14 Jun 2016 22:05:52 +0800</pubDate>
+      
+      <guid>http://chungwei.github.io/2016/06/14/python-upgrade/</guid>
+      <description>
+
+&lt;h4 id=&#34;系统基本信息:0744c71dad353a9a2084294ca39a142b&#34;&gt;系统基本信息&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;cat /proc/version
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://chungwei.github.io/img/linuxver.png&#34; style=&#34;width:100%&#34;&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cat /etc/issue
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://chungwei.github.io/img/linuxiss.png&#34; style=&#34;width:100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;备份:0744c71dad353a9a2084294ca39a142b&#34;&gt;备份&lt;/h4&gt;
+
+&lt;p&gt;安装之前备份旧版本（python2.6.6），因为 &lt;code&gt;yum&lt;/code&gt; 还会用到该版本&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;which python
+mv /usr/bin/python /usr/bin/python2.6.6
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;安装:0744c71dad353a9a2084294ca39a142b&#34;&gt;安装&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;wget https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tgz
+tar -zxvf Python-2.7.11.tgz
+cd Python-2.7.11
+./configure
+make
+make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;创建新版本软链:0744c71dad353a9a2084294ca39a142b&#34;&gt;创建新版本软链&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;which python2.7
+ln -s /usr/local/bin/python2.7 /usr/bin/python
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;更改-yum-配置:0744c71dad353a9a2084294ca39a142b&#34;&gt;更改 yum 配置&lt;/h4&gt;
+
+&lt;p&gt;这时候假如使用 &lt;code&gt;yum&lt;/code&gt;，便会报错，因为是 &lt;code&gt;python&lt;/code&gt; 的版本问题，应进行如下修改&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;vim /usr/bin/yum
+// 修改第一行
+#!/usr/bin/python
+// 为
+#!/usr/bin/python2.6.6
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Pexpect 实现 Linux 远程登录执行命令</title>
